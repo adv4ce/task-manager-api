@@ -85,45 +85,46 @@ TaskManagerAPI/
 
 1. **Клонировать репозиторий:**
 
-   ```bash
-   git clone https://github.com/yourusername/TaskManagerAPI.git
-   cd TaskManagerAPI/TaskManagerAPI
-   ```
+	```bash
+	git clone https://github.com/yourusername/TaskManagerAPI.git
+ 
+	cd TaskManagerAPI/TaskManagerAPI
+	```
 
 2. **Установить зависимости:**
 
-   ```bash
-   go mod tidy
-   ```
+	```bash
+	go mod tidy
+	```
 
 3. **Настройка конфигурации:**
 
-```bash
-# Вариант A: через Environment Variables
-cp .env.example .env
-# Отредактируйте .env при необходимости
-
-# Вариант B: через YAML
-cp internal/config/config.yml.example internal/config/config.yml
-# Отредактируйте config.yml при необходимости
-```
+	```bash
+	# Вариант A: через Environment Variables
+	cp .env.example .env
+	# Отредактируйте .env при необходимости
+	
+	# Вариант B: через YAML
+	cp internal/config/config.yml.example internal/config/config.yml
+	# Отредактируйте config.yml при необходимости
+	```
 
 4. **Запустить сервер:**
 
-   ```bash
-   go run cmd/server/main.go
-   ```
+	```bash
+	go run cmd/server/main.go
+	```
 
 5. **Проверить работу API:**
-   ```bash
-   curl http://localhost:8080/health
-   ```
-   **Ответ:**
-   ```json
-   {
-   	"status": "healthy"
-   }
-   ```
+	```bash
+	curl http://localhost:8080/health
+	```
+	**Ответ:**
+	```json
+	{
+	"status": "healthy"
+	}
+	```
 
 ---
 
@@ -137,7 +138,7 @@ cp internal/config/config.yml.example internal/config/config.yml
 
 ```json
 {
-	"status": "healthy"
+"status": "healthy"
 }
 ```
 
