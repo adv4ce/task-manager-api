@@ -1,0 +1,14 @@
+server:
+  port: "8080"
+  host: "localhost"
+
+logging:
+  level: "info"
+  format: "json"
+
+gin:
+  mode: "debug"
+
+app:
+  name: "Task Manager API"
+  version: "1.0.0"
