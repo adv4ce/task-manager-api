@@ -4,7 +4,9 @@ import (
 	"task_manager/internal/config"
 	"task_manager/internal/handlers"
 	"task_manager/internal/models"
-
+	"os/exec"
+	"runtime"
+	"time"
 	"github.com/sirupsen/logrus"
 )
 
@@ -22,9 +24,14 @@ func main() {
 
 	lib := models.CreateContainer()
 	router := handlers.CreateRouter(lib, cfg)
-
+	
 	adr := cfg.Server.Host + ":" + cfg.Server.Port
 	log.Infof("Server starting on %s", adr)
+
+	go func() {
+		time.Sleep(300 * time.Millisecond)
+		openBrowser("http://" + adr)
+	}()
 
 	if err := router.Run(adr); err != nil {
 		log.Fatalf("Failed to start server: %v", err)
@@ -45,4 +52,20 @@ func setupLogging(cfg *config.Config) {
 			FullTimestamp: true,
 		})
 	}
+}
+
+
+func openBrowser(url string) {
+	var cmd *exec.Cmd
+
+	switch runtime.GOOS {
+	case "windows":
+		cmd = exec.Command("cmd", "/c", "start", url)
+	case "darwin":
+		cmd = exec.Command("open", url)
+	default:
+		cmd = exec.Command("xdg-open", url)
+	}
+
+	_ = cmd.Start()
 }
