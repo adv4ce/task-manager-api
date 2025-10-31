@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<link rel="stylesheet" href="/static/styles.css" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+		/>
+	</head>
+	<body class="mt-md">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12">
+					<div class="logo-text mt-xl">
+						<h1>🧩 TaskManagerAPI</h1>
+						<span class="mb-0 lh-1">
+							Simple and extensible REST API for task management,
+						</span>
+						<span class="mb-0 lh-1">built with Go</span>
+					</div>
+					<div class="api-online mt-xl">
+						<div class="green-circle"></div>
+						<span> API is online </span>
+					</div>
+					<div class="link-buttons mt-md">
+						<div class="github-button">
+							<a
+								href="https://github.com/adv4ce"
+								type="button"
+								class="btn btn-primary"
+							>
+								<i class="bi bi-github"></i><span>GitHub</span>
+							</a>
+						</div>
+						<div class="docs-button">
+							<a
+								href="https://github.com/adv4ce/task-manager-api/blob/main/README.md"
+								type="button"
+								class="btn btn-secondary"
+							>
+								<i class="bi bi-file-earmark-code-fill"></i><span>Docs</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container mt-xxl">
+			<div class="row justify-content-center">
+				<div class="col-6">
+					<div class="panel-base tasks-view">
+						<div class="top-panel-view">
+							<span>Tasks</span>
+							<div class="task-count-block">
+								<p>1</p>
+							</div>
+						</div>
+						<div class="task-list"></div>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="panel-base tasks-panel">
+						<div class="method-choose">
+							<div class="d-flex gap-1">
+								<input
+									type="radio"
+									class="btn-check"
+									name="btnradio"
+									id="btnradio1"
+									autocomplete="off"
+									checked
+								/>
+								<label class="btn btn-outline-custom flex-fill" for="btnradio1"
+									>Create</label
+								>
+
+								<input
+									type="radio"
+									class="btn-check"
+									name="btnradio"
+									id="btnradio2"
+									autocomplete="off"
+								/>
+								<label class="btn btn-outline-custom flex-fill" for="btnradio2"
+									>Get</label
+								>
+
+								<input
+									type="radio"
+									class="btn-check"
+									name="btnradio"
+									id="btnradio3"
+									autocomplete="off"
+								/>
+								<label class="btn btn-outline-custom flex-fill" for="btnradio3"
+									>Update</label
+								>
+
+								<input
+									type="radio"
+									class="btn-check"
+									name="btnradio"
+									id="btnradio4"
+									autocomplete="off"
+								/>
+								<label class="btn btn-outline-custom flex-fill" for="btnradio4"
+									>Delete</label
+								>
+
+								<input
+									type="radio"
+									class="btn-check"
+									name="btnradio"
+									id="btnradio5"
+									autocomplete="off"
+								/>
+								<label class="btn btn-outline-custom flex-fill" for="btnradio5"
+									>Close</label
+								>
+							</div>
+						</div>
+						<div id="tabContent"></div>
+						<button
+							type="button"
+							class="btn btn-primary send-btn"
+							id="send-btn"
+						>
+							Send request
+						</button>
+						<span class="mt-xl answer-type">REQUEST</span>
+						<div class="result-block requests-block">
+							<p id="requests-text"></p>
+						</div>
+						<div class="response mt-md">
+							<span class="answer-type">RESPONSE</span>
+							<div class="response-status status-unvisible">
+								<p class="response-status-text">Succes</p>
+							</div>
+						</div>
+
+						<div class="result-block response-block">
+							<p id="response-text"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container mt-xxl mb-xxl">
+			<div class="row justify-content-center">
+				<div class="col-4">
+					<div class="card card-1">
+						<div class="card-header">
+							<span>🚀</span>
+						</div>
+						<div class="card-center">
+							<span>Built with Go & Gin</span>
+						</div>
+						<div class="card-footer">
+							<span>Fast and efficient</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="card card-2">
+						<div class="card-header">
+							<span>🔧</span>
+						</div>
+						<div class="card-center">
+							<span>RESTful Design</span>
+						</div>
+						<div class="card-footer">
+							<span>Clean API structure</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="card card-3">
+						<div class="card-header">
+							<span>📦</span>
+						</div>
+						<div class="card-center">
+							<span>Fast Storage</span>
+						</div>
+						<div class="card-footer">
+							<span>Simple and fast</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center mt-4">
+				<div class="col-4">
+					<div class="card card-4">
+						<div class="card-header">
+							<span>⚡</span>
+						</div>
+						<div class="card-center">
+							<span>Easy Integration</span>
+						</div>
+						<div class="card-footer">
+							<span>Simple HTTP requests</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="card card-5">
+						<div class="card-header">
+							<span>🛡️</span>
+						</div>
+						<div class="card-center">
+							<span>Error Handling</span>
+						</div>
+						<div class="card-footer">
+							<span>Proper status codes</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="card card-6">
+						<div class="card-header">
+							<span>🧪</span>
+						</div>
+						<div class="card-center">
+							<span>Fully Tested</span>
+						</div>
+						<div class="card-footer">
+							<span>Comprehensive test coverage</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			window.API_URL = '{{ .API_URL }}'
+		</script>
+		<script type="module" src="/static/script.js"></script>
+	</body>
+</html>
